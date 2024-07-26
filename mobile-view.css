@@ -352,6 +352,9 @@ body {
     .message-image img{
         height: 250px;
     }
+    .message-image{
+        order:1;
+    }
     .message-content h4 {
         text-align: center;
     }
