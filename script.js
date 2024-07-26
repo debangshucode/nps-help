@@ -9,7 +9,25 @@ document.getElementById('menuToggle').addEventListener('click', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById('popup');
+    var closeBtn = document.querySelector('.close-btn');
 
+    if (!popup || !closeBtn) {
+        console.error('One or more elements are not found.');
+        return;
+    }
+
+    closeBtn.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
 
 // script.js
 
