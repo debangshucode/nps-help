@@ -122,18 +122,6 @@ body {
     /* Center items vertically */
 }
 
-.dropdownmenu ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    /* Remove default padding */
-    margin: 0;
-    /* Remove default margin */
-    list-style-type: none;
-    /* Remove default list style */
-}
-
 .dropdownmenu ul li {
     text-align: center;
     list-style-type: none;
@@ -149,17 +137,6 @@ body {
     /* Center items vertically */
 }
 
-.dropdownmenu ul li a {
-    text-decoration: none;
-    padding: 5px 35px;
-    color: var(--text);
-    display: block;
-    /* Ensure a element covers the entire clickable area */
-}
-
-/* Add hover effect with transition*/
-
-
 .dropdownmenu ul {
     display: flex;
     justify-content: center;
@@ -170,15 +147,6 @@ body {
     /* Remove default margin */
     list-style-type: none;
     /* Remove default list style */
-}
-
-.dropdownmenu ul li {
-    text-align: center;
-    list-style-type: none;
-    margin: 0 10px;
-    /* Add margin between list items */
-    position: relative;
-    /* Necessary for animation */
 }
 
 .dropdownmenu ul li a {
@@ -201,15 +169,9 @@ body {
 }
 
 /* Add animation to list items */
-
-
 .dropdownmenu ul li {
     animation: dropdown-animation 0.5s ease-in-out;
 }
-
-
-
-
 
 .menu-toggle {
     background: var(--bg-c);
@@ -222,8 +184,6 @@ body {
     /* Show the button by default */
 
 }
-
-
 
 .slider-container {
     position: relative;
@@ -255,7 +215,27 @@ body {
     z-index: -1;
     /* Place video behind content */
 }
-
+.toptop{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 90px;
+    color: #ccc;
+    background-color: var(--bg-c);
+    font-size: 22px;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    color: #ccc;
+    align-items: center;
+}
+.icons i{
+    color: #ccc;
+    font-size: 22px;
+}
 .slider-message {
     position: absolute;
     top: 50%;
@@ -976,13 +956,7 @@ button:hover {
         max-width: 100%;
         height: auto;
     }
-    .logoPC{
-        display: none;
-    }
-    .logomob{
-        display: block;
-        object-fit: contain;
-    }
+    
 }
 
 
