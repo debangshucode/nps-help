@@ -248,7 +248,7 @@ body {
         justify-content: space-evenly;
     }
     .menu-toggle {
-        display: block;
+        display: flex;
         background: #FFA000;
         color: var(--text);
         border: none;
@@ -257,7 +257,10 @@ body {
         font-size: 11px;
         text-align: center;
         position: static;
+        width: 19%;
+        justify-content: space-between;
         top: 128px;
+        align-items: center;
     }
     
     .toptop{
@@ -459,5 +462,8 @@ body {
     .contact-info {
         margin-right: 0;
         margin-bottom: 20px;
+    }
+    ul#loginDropdown {
+        top: 150px;
     }
 }

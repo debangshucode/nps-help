@@ -2,12 +2,13 @@
 
 document.getElementById('menuToggle').addEventListener('click', function() {
     var dropdownMenu = document.getElementById('dropdownMenu');
+    var menuToggleIcon = this.querySelector('i');
     if (dropdownMenu.style.display === 'flex') {
         dropdownMenu.style.display = 'none';
-        menuToggle.textContent = 'Menu';
+        this.innerHTML = 'Menu <i class="fa-solid fa-bars"></i>';
     } else {
         dropdownMenu.style.display = 'flex';
-        menuToggle.textContent = 'Close';
+        this.innerHTML = 'Close <i class="fa-solid fa-times"></i>';
     }
 });
 

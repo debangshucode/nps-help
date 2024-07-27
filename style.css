@@ -107,36 +107,14 @@ body {
     transition: all 0.5s;
 }
 
-
-
-/* Ensure the dropdown menu is relative to the parent */
 .dropdownmenu {
     background: var(--bg-c);
     position: relative;
-    /* Make it relative */
     z-index: 1;
-    /* Ensure it's above other content if necessary */
     display: flex;
-    /* Use flexbox for alignment */
     justify-content: center;
-    /* Center items horizontally */
     align-items: center;
-    /* Center items vertically */
-}
-
-.dropdownmenu ul li {
-    text-align: center;
-    list-style-type: none;
-    margin: 0 10px;
-    /* Add margin between list items */
-    position: relative;
-    /* Necessary for animation */
-    display: flex;
-    /* Use flexbox for alignment */
-    justify-content: center;
-    /* Center items horizontally */
-    align-items: center;
-    /* Center items vertically */
+    overflow: visible;
 }
 
 .dropdownmenu ul {
@@ -144,11 +122,20 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0;
-    /* Remove default padding */
     margin: 0;
-    /* Remove default margin */
     list-style-type: none;
-    /* Remove default list style */
+    overflow: visible;
+}
+
+.dropdownmenu ul li {
+    text-align: center;
+    list-style-type: none;
+    margin: 0 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
 }
 
 .dropdownmenu ul li a {
@@ -160,39 +147,52 @@ body {
     align-items: center;
     color: var(--text);
     display: block;
-    /* Ensure a element covers the entire clickable area */
 }
 
-/* Add hover effect with transition */
 .dropdownmenu ul li a:hover {
     background-color: var(--box-color);
     color: var(--bg-c);
     transition: background-color 0.5s, color 0.5s;
 }
 
-/* Add animation to list items */
 .dropdownmenu ul li {
     animation: dropdown-animation 0.5s ease-in-out;
 }
+
 .submenu {
     display: none;
     list-style: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -35px;
     background: #0056b3;
     padding: 0;
-    z-index: 1000; /* Ensure the submenu is on top */
-    width: 200px; /* Adjust as needed */
+    z-index: 1001; /* Ensure it overlaps */
+}
+
+.submenu li {
+    display: block;
 }
 
 .submenu li a {
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increased padding */
+    display: block;
+    white-space: nowrap;
 }
 
 .menu li:hover > .submenu {
     display: block;
 }
+
+.mark > a::after {
+    content: " ▼";
+    font-size: 0.8em;
+}
+
+.mark:hover > a::after {
+    content: " ▲";
+}
+
 .menu-toggle {
     background: var(--bg-c);
     color: var(--text);
@@ -201,9 +201,8 @@ body {
     cursor: pointer;
     font-size: 16px;
     display: block;
-    /* Show the button by default */
-
 }
+
 
 .slider-container {
     position: relative;
@@ -212,7 +211,7 @@ body {
     /* Full viewport height */
     overflow: hidden;
     /* Hide overflow */
-    z-index: 1;
+    z-index: 0;
     /* Ensure it's below the dropdown menu */
 
 }
@@ -1006,11 +1005,14 @@ button:hover {
         color: var(--text);
         padding: 5px 10px;
     }
-    .login-section .container-login{
+    .login-section .container-login {
         margin: 15px 25px;
+        text-align: center;
+        width: -webkit-fill-available;
     }
-    
-
+    .menu-toggle i{
+        font-size: 13px;
+    }
 }
 
 
