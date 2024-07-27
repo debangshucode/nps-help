@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form and Receipt</title>
+    <link rel="stylesheet" href="registration.css">
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <div class="header">
+                <img src="images/logologo.jpg" alt="School Logo" class="logo">
+                <div class="school-info">
+                    <h1>NATIONAL PUBLIC SCHOOL</h1>
+                    <p>(Under K.M.C.M.W.S.T - Regd. by State Government)</p>
+                    <p><strong>(An English Medium Co-Educational School)</strong></p>
+                    <p>At. Milanpally, Po.- Panjipara, Ps.-Goalpokher, Dist.- Uttar Dinajpur</p>
+                </div>
+            </div>
+            <div class="form-details">
+                <h2 class="important">Registration Form</h2>
+                <p>2024-2025</p>
+                <div class="form-row">
+                    <div class="form-col">
+                        <p><strong>Form No:</strong> __</p>
+                    </div>
+                </div>
+                <div class="sid-container">
+                    <table>
+                        <tr>
+                            <td class="info">Name of Candidate:</td>
+                            <td>RAHABAR ISLAM</td>
+                            <td class="info">DOR:</td>
+                            <td>21/12/2023</td>
+                        </tr>
+                        <tr>
+                            <td class="info">Father's Name:</td>
+                            <td>MD SAJJAD ALAM</td>
+                            <td class="info">DOE:</td>
+                            <td>21/12/2023</td>
+                        </tr>
+                        <tr>
+                            <td class="info">Address:</td>
+                            <td colspan="3">HALDIBARI, TAIYABPUR, POST-POTHIA, KISHANGANJ, BIHAR, PIN-855117</td>
+                        </tr>
+                        <tr>
+                            <td class="info">Class For:</td>
+                            <td>L.K.G.</td>
+                            <td class="info">Contact No:</td>
+                            <td>9883356629</td>
+                        </tr>
+                        <tr>
+                            <td class="info">DOB:</td>
+                            <td>09/02/2014</td>
+                            <td class="info">Gender:</td>
+                            <td>MALE</td>
+                        </tr>
+                    </table>
+                    <div class="sid">
+                        <p><strong>SID:</strong> __</p>
+                        <div class="spic"></div>
+                    </div>
+                </div>
+                <p class="brown important left">Note: Result of the Entrance Exam will be published on the same day.</p>
+                <p class="authorized important left">Student Copy</p>
+                <p class="authorized important right">Authorized</p>
+            </div>
+        </div>
+
+        <div class="receipt">
+            <div class="header">
+                <img src="images/logologo.jpg" alt="School Logo" class="logo">
+                <div class="school-info">
+                    <h1>NATIONAL PUBLIC SCHOOL</h1>
+                    <p>(Under K.M.C.M.W.S.T - Regd. by State Government)</p>
+                    <p>(An English Medium Co-Educational School)</p>
+                    <p>At. Milanpally, Po.- Panjipara, Ps.-Goalpokher, Dist.- Uttar Dinajpur</p>
+                </div>
+            </div>
+            <div class="form-details">
+                <h2>Receipt</h2>
+                <div class="form-row">
+                    <div class="form-col">
+                        <p><strong class="important brown">RID:</strong> 28</p>
+                        <p><strong class="important brown">DOR:</strong> 21/12/2023</p>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <td class="info">Received with Thanks, from:</td>
+                        <td>RAHABAR ISLAM</td>
+                    </tr>
+                    <tr>
+                        <td class="info">Father's Name:</td>
+                        <td>MD SAJJAD ALAM</td>
+                    </tr>
+                    <tr>
+                        <td class="info">Address:</td>
+                        <td>HALDIBARI, TAIYABPUR, POST-POTHIA, KISHANGANJ, BIHAR, PIN-855117</td>
+                    </tr>
+                    <tr>
+                        <td class="info">For Class:</td>
+                        <td>L.K.G.</td>
+                    </tr>
+                    <tr>
+                        <td class="info">The sum of Rupees:</td>
+                        <td>0.00 (RUPEES ONLY)</td>
+                    </tr>
+                    <tr>
+                        <td class="info">By Cheque/Cash/Draft/Online/UPI Tr No:</td>
+                        <td>NA</td>
+                    </tr>
+                </table>
+                <p class="authorized important left">Student Copy</p>
+                <p class="authorized important right">Authorized</p>
+            </div>
+        </div>
+        <button class="print-button" onclick="printPage()">Print</button>
+    </div>
+</body>
+
+</html>

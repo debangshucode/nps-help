@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <div class="plan-details">
+            <h2>Semester Fees</h2>
+            <p>Last date 25/5/2024</p>
+            <div class="price">₹ 56000</div>
+            <p>billed annually</p>
+            <div class="summary">
+                <div>
+                    <span>Subtotal</span>
+                    <span>₹ 54000</span>
+                </div>
+                <div>
+                    <span>Taxes and Fees</span>
+                    <span>₹ 2000</span>
+                </div>
+                <div>
+                    <strong>Total</strong>
+                    <strong>₹ 56000</strong>
+                </div>
+            </div>
+        </div>
+        <div class="payment-details">
+            <h2>Payment details</h2>
+            <label for="Class"></label>
+            <select id="Class" name="Class">
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <!-- Add more options as needed -->
+            </select>
+            <label for="name">Name on card</label>
+            <input type="text" id="name" name="name">
+            <label for="parents-name">Parents-name</label>
+            <input type="text" id="parents-name" name="parents-name">
+            <label for="amount">Amount</label>
+            <select id="amount" name="amount">
+                <option value="1">₹ 600</option>
+                <!-- Add more options as needed -->
+            </select>
+            <div class="button-container">
+                <button type="submit">Pay</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

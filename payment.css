@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9FBFC;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: #D8E6F3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.plan-details {
+    background-color: #003366;
+    color: white;
+    padding: 40px;
+    width: 300px;
+}
+
+.plan-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.plan-details .price {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.plan-details .modify-plan {
+    margin: 20px 0;
+}
+
+.plan-details .summary {
+    margin-top: 40px;
+}
+
+.plan-details .summary div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.payment-details {
+    padding: 40px;
+    background-color: #F9FBFC;
+    width: 400px;
+}
+
+.payment-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #003366;
+}
+
+.payment-details label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #003366;
+}
+
+.payment-details input,
+.payment-details select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.payment-details .billing-period {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.payment-details .billing-period label {
+    display: inline;
+    margin: 0;
+}
+
+.payment-details .button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-details button,
+.payment-details .paypal,
+.payment-details .apple-pay {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #003366;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.payment-details .paypal,
+.payment-details .apple-pay {
+    background-color: #ccc;
+    color: black;
+}
+
+.payment-details button:hover,
+.payment-details .paypal:hover,
+.payment-details .apple-pay:hover {
+    background-color: #002244;
+}
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        border-radius: 0;
+        overflow-x: hidden;
+        height: 99%;
+        justify-content: center;
+        align-items: center;
+    }
+}
