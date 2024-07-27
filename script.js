@@ -2,10 +2,12 @@
 
 document.getElementById('menuToggle').addEventListener('click', function() {
     var dropdownMenu = document.getElementById('dropdownMenu');
-    if (dropdownMenu.style.display === 'block') {
+    if (dropdownMenu.style.display === 'flex') {
         dropdownMenu.style.display = 'none';
+        menuToggle.textContent = 'Menu';
     } else {
-        dropdownMenu.style.display = 'block';
+        dropdownMenu.style.display = 'flex';
+        menuToggle.textContent = 'Close';
     }
 });
 

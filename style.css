@@ -19,8 +19,7 @@
 body {
     /* font-family: "Noto Sans", sans-serif; */
     font-family: "Sofia Sans Semi Condensed", sans-serif;
-
-
+    scroll-behavior: smooth;
 }
 
 .icon {
@@ -45,6 +44,7 @@ body {
     background: var(--box-color);
     letter-spacing: .1rem;
     color: var(--bg-c);
+    transition: all 0.5s;
 }
 
 
@@ -98,11 +98,13 @@ body {
 }
 
 .base-contact .details a:hover i {
-    color: var(--box-color);
+    color:#ffa500;
+    transition: all 0.5s;
 }
 
 .base-contact .details a:hover {
-    color: var(--box-color);
+    color:#ffa500;
+    transition: all 0.5s;
 }
 
 
@@ -188,7 +190,7 @@ body {
 .slider-container {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 80vh;
     /* Full viewport height */
     overflow: hidden;
     /* Hide overflow */
@@ -223,7 +225,9 @@ body {
     padding: 0 90px;
     color: #ccc;
     background-color: var(--bg-c);
-    font-size: 22px;
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 5px;
 }
 .icons{
     display: flex;
@@ -266,6 +270,7 @@ body {
     color: #003B6E;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 3.5rem;
 }
 
 .content {
@@ -276,11 +281,12 @@ body {
 
 .content p {
     color: #333;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
 }
 
 .content button {
+    display: none;
     background-color: var(--bg-c);
     border: none;
     color: white;
@@ -293,9 +299,11 @@ body {
 
 button:hover {
     background-color: #FFA000;
+    transition: all 0.5s;
 }
 
  h1{
+    font-size: 3.5rem;
     text-align: center;
     color: var(--bg-c);
     margin-top: 10px;
@@ -347,6 +355,7 @@ button:hover {
 
 .grid-item:hover .overlay {
     opacity: 1;
+    transition: all 0.5s;
 }
 
 /* principle */
@@ -402,8 +411,12 @@ button:hover {
 
 .header-button button:hover {
     background-color: #e0e0e0;
+    transition: all 0.5s;
 }
-
+.login-section div:hover {
+    background-color: #FFA000;
+    transition: all 0.5s;
+}
 .principal {
     background-color: white;
     padding: 40px 20px;
@@ -483,6 +496,7 @@ button:hover {
 
 .message-content button:hover {
     background-color: #002244;
+    transition: all 0.5s;
 }
 
 
@@ -534,6 +548,7 @@ button:hover {
 
 .buttons button:hover {
     background-color: var(--box-color);
+    transition: all 0.5s;
 }
 
 /* notice */
@@ -773,6 +788,7 @@ button:hover {
 
 .contact-form button:hover {
     background-color: #45a049;
+    transition: all 0.5s;
 }
 
 /* login section  design  */
@@ -838,6 +854,33 @@ button:hover {
     color: #333;
     margin: 0;
 }
+.footdetails i {
+    color: #ccc;
+}
+.footdetails {
+    display: flex;
+    justify-content: flex-start;
+    gap: 42px;
+    margin: 10px 0;
+}
+.promotion {
+    flex-wrap: wrap;
+    padding: 30px 0;
+    background: #003366;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+}
+.promotion a{
+    text-decoration: none;
+    color: #ccc;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+.header-button{
+    width: 12%;
+}
 
 @media (min-width:768px) {
     .menu-toggle {
@@ -851,7 +894,9 @@ button:hover {
 /* mobile view */
 
 @media (max-width: 768px) {
-
+    .content button {
+        display: inline;
+    }
     .logo img {
         max-width: 100%;
         height: auto;
@@ -861,10 +906,12 @@ button:hover {
     .base-contact {
         display: none;
     }
-
+    .message-image {
+        order: -1;
+    }
     .slider-message h1 {
         text-align: center;
-        font-size: 24px;
+        font-size: 40px;
         /* Adjust font size for smaller screens */
     }
 
@@ -883,11 +930,8 @@ button:hover {
         position: relative;
         width: 100%;
         height: 70vh;
-        /* Full viewport height */
         overflow: hidden;
-        /* Hide overflow */
-        z-index: 1;
-        /* Ensure it's below the dropdown menu */
+        z-index: 0;
     }
 
     .slider-video {
@@ -905,6 +949,7 @@ button:hover {
     }
 
     .slider-message {
+        width: 100%;
         position: absolute;
         top: 50%;
         /* Adjusted for better placement on mobile */
@@ -956,7 +1001,9 @@ button:hover {
         max-width: 100%;
         height: auto;
     }
-    
+    .close{
+        display: none;
+    }
 }
 
 
