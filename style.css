@@ -174,7 +174,25 @@ body {
 .dropdownmenu ul li {
     animation: dropdown-animation 0.5s ease-in-out;
 }
+.submenu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0056b3;
+    padding: 0;
+    z-index: 1000; /* Ensure the submenu is on top */
+    width: 200px; /* Adjust as needed */
+}
 
+.submenu li a {
+    padding: 10px 20px;
+}
+
+.menu li:hover > .submenu {
+    display: block;
+}
 .menu-toggle {
     background: var(--bg-c);
     color: var(--text);
@@ -1037,4 +1055,25 @@ button:hover {
         transform: translateX(0);
     }
     
+}
+/* Define keyframes for animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Animation class */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
 }

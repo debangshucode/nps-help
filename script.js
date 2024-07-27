@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.counter');
     const speed = 500; // The lower the number, the faster the count
 
-    counters.forEach(counter => {
+    const startCounting = (counter) => {
         const updateCount = () => {
             const target = +counter.getAttribute('data-target');
             const count = +counter.innerText;
@@ -79,5 +79,100 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         updateCount();
+    };
+
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.1 // When 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                startCounting(counter);
+                observer.unobserve(counter); // Stop observing once started
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter');
+    const animatables = document.querySelectorAll('.animatable'); // Select elements to animate
+    const speed = 500; // The lower the number, the faster the count
+
+    const startCounting = (counter) => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            // Lower increment to slow and higher to speed
+            const increment = target / speed;
+
+            // Check if target is reached
+            if (count < target) {
+                // Add increment
+                counter.innerText = Math.ceil(count + increment);
+                // Call function every 1 millisecond
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCount();
+    };
+
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.1 // When 10% of the element is visible
+    };
+
+    const handleIntersection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('counter')) {
+                    startCounting(entry.target);
+                } else if (entry.target.classList.contains('animatable')) {
+                    entry.target.classList.add('animated', 'fadeInUp');
+                }
+                observer.unobserve(entry.target); // Stop observing once started
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+
+    animatables.forEach(animatable => {
+        observer.observe(animatable);
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const loginToggle = document.getElementById('loginToggle');
+    const loginDropdown = document.getElementById('loginDropdown');
+
+    // Toggle login submenu
+    loginToggle.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default anchor behavior
+        loginDropdown.style.display = loginDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close menus when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.dropdownmenu')) {
+            loginDropdown.style.display = 'none';
+        }
     });
 });
