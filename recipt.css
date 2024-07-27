@@ -47,7 +47,7 @@ body {
     flex-grow: 1;
 }
 
-.header .school-info h2 {
+.header .school-info h1 {
     margin: 0;
     color: #563c33;
 }
@@ -62,9 +62,10 @@ body {
 
 .info-row {
     display: flex;
-    justify-content: space-between;
-    border: 2px solid #556295;
-    padding: 8px;
+    justify-content: left;
+    /* border: 2px solid #556295; */
+    padding: 1px;
+    gap: 40px;
 }
 
 .fee-details {
@@ -75,11 +76,14 @@ body {
     color: #203ba9;
     font-weight: 600;
 }
+.border{
+    background-color: #cccccc8f;
+    border: 2px solid #556295;
+}
 .fee-row {
     display: flex;
     justify-content: space-between;
-    border: 2px solid #556295;
-    padding: 8px;
+    padding: 1px;
     color: #1e575d;
     font-weight: 600;
 }
@@ -103,7 +107,7 @@ body {
     color: #1e575d;
 }
 p{
-    color: #556295;
+    color: #213dae;
 }
 .brown{
     font-weight: 600;
@@ -120,7 +124,7 @@ p{
     font-weight: 600;
 }
 .cian{
-    color: #1e575d;
+    color: #258c97;
     font-weight: 600;
 }
 .print-button {
