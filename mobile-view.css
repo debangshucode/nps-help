@@ -368,9 +368,6 @@ body {
         display: none;
     }
 
-    .notice-container {
-        margin: 5px;
-    }
 
     .navigation {
         flex-direction: column;
