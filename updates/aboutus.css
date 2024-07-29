@@ -189,12 +189,15 @@ html {
 
     .about-school-text {
         padding: 20px;
+        border-top: 0;
     }
 
     .section {
         flex-direction: column;
     }
-
+    .section-image{
+        width: 390px;
+    }
     .school-sections {
         padding: 20px;
     }
@@ -206,4 +209,24 @@ html {
     .section-content {
         padding: 10px;
     }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Animation class */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
 }
