@@ -24,14 +24,22 @@ document.addEventListener("click", function (event) {
   }
 });
 // Close the dropdown menu when any option is clicked
+// Close the dropdown menu on mobile screens when an option is clicked
+function handleMenuOptionClick(event) {
+  if (window.innerWidth <= 768) {
+    var menuOption = event.target;
+    if (menuOption.id !== "loginToggle") {
+      var dropdownMenu = document.getElementById("dropdownMenu");
+      var menuToggle = document.getElementById("menuToggle");
+      dropdownMenu.style.display = "none";
+      menuToggle.textContent = "Menu";
+    }
+  }
+}
 document.querySelectorAll(".menu li a").forEach(function (menuOption) {
-  menuOption.addEventListener("click", function () {
-    var dropdownMenu = document.getElementById("dropdownMenu");
-    var menuToggle = document.getElementById("menuToggle");
-    dropdownMenu.style.display = "none";
-    menuToggle.innerHTML = 'Menu <i class="fa-solid fa-bars"></i>';
-  });
+  menuOption.addEventListener("click", handleMenuOptionClick);
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   var popup = document.getElementById("popup");
   var closeBtn = document.querySelector(".close-btn");
@@ -206,3 +214,20 @@ document
     event.preventDefault();
     document.getElementById("notice").scrollIntoView({ behavior: "smooth" });
   });
+
+
+  
+function updateHeaderHeight() {
+  var header = document.querySelector("header");
+  var headerHeight = header.offsetHeight;
+  document.documentElement.style.setProperty(
+    "--header-height",
+    `${headerHeight}px`
+  );
+}
+
+// Update the height on initial load
+document.addEventListener("DOMContentLoaded", updateHeaderHeight);
+
+// Optionally, update the height on window resize
+window.addEventListener("resize", updateHeaderHeight);
