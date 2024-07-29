@@ -319,6 +319,7 @@ body {
 
     .grid-item {
         position: relative;
+        justify-self: center;
     }
 
     .grid-item img {
@@ -338,7 +339,9 @@ body {
         width: auto;
 
     }
-
+    .overlay{
+        opacity: 0.9;
+    }
     .principal-message {
         flex-direction: column;
         padding: 0;
@@ -392,6 +395,7 @@ body {
     .gallery {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 20px;
     }
 
 

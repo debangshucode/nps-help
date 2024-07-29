@@ -22,6 +22,59 @@ body {
     scroll-behavior: smooth;
 }
 
+
+/* aboutus */
+
+.about-us-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-section {
+    flex: 1;
+    background-color: #452662; /* Use the purple color from the image */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    min-width: 300px; /* Ensures left section maintains some width on smaller screens */
+}
+
+.text-content {
+    text-align: center;
+}
+
+.text-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: #FFD700; /* Use the yellow color for the underline */
+    margin: 20px auto 0;
+}
+
+.right-section {
+    flex: 1;
+    position: relative;
+    min-width: 300px; /* Ensures right section maintains some width on smaller screens */
+}
+
+.right-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* endabout */
+
+
+
 .icon {
     font-size: 25px;
     color: var(--bg-c);
@@ -340,6 +393,8 @@ button:hover {
 
 .grid-item {
     position: relative;
+    width: 362px;
+    height: 242px;
 }
 
 .grid-item img {
@@ -661,6 +716,7 @@ button:hover {
     padding: 10px;
     text-align: center;
     max-width: 300px;
+    height: 250px;
 }
 
 .gallery-item img {
@@ -898,6 +954,8 @@ button:hover {
 .header-button{
     width: 12%;
 }
+
+
 
 @media (min-width:768px) {
     .menu-toggle {

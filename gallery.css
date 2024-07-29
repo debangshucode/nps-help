@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-pagecontainer {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-pagecontainer h1 {
+    margin-bottom: 20px;
+}
+
+/* Masonry grid layout */
+.masonry {
+    column-count: 3;
+    column-gap: 10px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+}
+
+.masonry img, .masonry video {
+    width: 100%;
+    height: auto;
+    display: block;
+}

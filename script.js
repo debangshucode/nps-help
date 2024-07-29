@@ -1,179 +1,208 @@
 // script.js
 
-document.getElementById('menuToggle').addEventListener('click', function() {
-    var dropdownMenu = document.getElementById('dropdownMenu');
-    var menuToggleIcon = this.querySelector('i');
-    if (dropdownMenu.style.display === 'flex') {
-        dropdownMenu.style.display = 'none';
-        this.innerHTML = 'Menu <i class="fa-solid fa-bars"></i>';
-    } else {
-        dropdownMenu.style.display = 'flex';
-        this.innerHTML = 'Close <i class="fa-solid fa-times"></i>';
-    }
+document.getElementById("menuToggle").addEventListener("click", function () {
+  var dropdownMenu = document.getElementById("dropdownMenu");
+  var menuToggleIcon = this.querySelector("i");
+  if (dropdownMenu.style.display === "flex") {
+    dropdownMenu.style.display = "none";
+    this.innerHTML = 'Menu <i class="fa-solid fa-bars"></i>';
+  } else {
+    dropdownMenu.style.display = "flex";
+    this.innerHTML = 'Close <i class="fa-solid fa-times"></i>';
+  }
 });
+document.addEventListener("click", function (event) {
+  var dropdownMenu = document.getElementById("dropdownMenu");
+  var menuToggle = document.getElementById("menuToggle");
+  if (
+    dropdownMenu.style.display === "flex" &&
+    !menuToggle.contains(event.target) &&
+    !dropdownMenu.contains(event.target)
+  ) {
+    dropdownMenu.style.display = "none";
+    menuToggle.innerHTML = 'Menu <i class="fa-solid fa-bars"></i>';
+  }
+});
+// Close the dropdown menu when any option is clicked
+document.querySelectorAll(".menu li a").forEach(function (menuOption) {
+  menuOption.addEventListener("click", function () {
+    var dropdownMenu = document.getElementById("dropdownMenu");
+    var menuToggle = document.getElementById("menuToggle");
+    dropdownMenu.style.display = "none";
+    menuToggle.innerHTML = 'Menu <i class="fa-solid fa-bars"></i>';
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  var popup = document.getElementById("popup");
+  var closeBtn = document.querySelector(".close-btn");
 
-document.addEventListener('DOMContentLoaded', function() {
-    var popup = document.getElementById('popup');
-    var closeBtn = document.querySelector('.close-btn');
+  if (!popup || !closeBtn) {
+    console.error("One or more elements are not found.");
+    return;
+  }
 
-    if (!popup || !closeBtn) {
-        console.error('One or more elements are not found.');
-        return;
+  closeBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target === popup) {
+      popup.style.display = "none";
     }
-
-    closeBtn.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
-    });
+  });
 });
 
 // script.js
 
-document.getElementById('readMoreBtn').addEventListener('click', function() {
-    var content = document.querySelector('.content');
-    content.classList.toggle('expanded');
-    var btn = document.getElementById('readMoreBtn');
-    if (content.classList.contains('expanded')) {
-        btn.textContent = 'Read Less';
-    } else {
-        btn.textContent = 'Read More';
-    }
+document.getElementById("readMoreBtn").addEventListener("click", function () {
+  var content = document.querySelector(".content");
+  content.classList.toggle("expanded");
+  var btn = document.getElementById("readMoreBtn");
+  if (content.classList.contains("expanded")) {
+    btn.textContent = "Read Less";
+  } else {
+    btn.textContent = "Read More";
+  }
 });
 
-
-document.getElementById('readMoreBtn').addEventListener('click', function() {
-    var content = document.querySelector('.talk');
-    content.classList.toggle('expanded');
-    var btn = document.getElementById('readMoreBtn');
-    if (content.classList.contains('expanded')) {
-        btn.textContent = 'Read Less';
-    } else {
-        btn.textContent = 'Read More';
-    }
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 500; // The lower the number, the faster the count
-
-    const startCounting = (counter) => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-
-            // Lower increment to slow and higher to speed
-            const increment = target / speed;
-
-            // Check if target is reached
-            if (count < target) {
-                // Add increment
-                counter.innerText = Math.ceil(count + increment);
-                // Call function every 1 millisecond
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        updateCount();
-    };
-
-    const observerOptions = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // When 10% of the element is visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                startCounting(counter);
-                observer.unobserve(counter); // Stop observing once started
-            }
-        });
-    }, observerOptions);
-
-    counters.forEach(counter => {
-        observer.observe(counter);
-    });
+document.getElementById("readMoreBtn").addEventListener("click", function () {
+  var content = document.querySelector(".talk");
+  content.classList.toggle("expanded");
+  var btn = document.getElementById("readMoreBtn");
+  if (content.classList.contains("expanded")) {
+    btn.textContent = "Read Less";
+  } else {
+    btn.textContent = "Read More";
+  }
 });
 document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll('.counter');
-    const animatables = document.querySelectorAll('.animatable'); // Select elements to animate
-    const speed = 500; // The lower the number, the faster the count
+  const counters = document.querySelectorAll(".counter");
+  const speed = 500; // The lower the number, the faster the count
 
-    const startCounting = (counter) => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
+  const startCounting = (counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText;
 
-            // Lower increment to slow and higher to speed
-            const increment = target / speed;
+      // Lower increment to slow and higher to speed
+      const increment = target / speed;
 
-            // Check if target is reached
-            if (count < target) {
-                // Add increment
-                counter.innerText = Math.ceil(count + increment);
-                // Call function every 1 millisecond
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        updateCount();
+      // Check if target is reached
+      if (count < target) {
+        // Add increment
+        counter.innerText = Math.ceil(count + increment);
+        // Call function every 1 millisecond
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
     };
 
-    const observerOptions = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // When 10% of the element is visible
-    };
+    updateCount();
+  };
 
-    const handleIntersection = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (entry.target.classList.contains('counter')) {
-                    startCounting(entry.target);
-                } else if (entry.target.classList.contains('animatable')) {
-                    entry.target.classList.add('animated', 'fadeInUp');
-                }
-                observer.unobserve(entry.target); // Stop observing once started
-            }
-        });
-    };
+  const observerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.1, // When 10% of the element is visible
+  };
 
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    counters.forEach(counter => {
-        observer.observe(counter);
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        startCounting(counter);
+        observer.unobserve(counter); // Stop observing once started
+      }
     });
+  }, observerOptions);
 
-    animatables.forEach(animatable => {
-        observer.observe(animatable);
-    });
+  counters.forEach((counter) => {
+    observer.observe(counter);
+  });
 });
 document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const loginToggle = document.getElementById('loginToggle');
-    const loginDropdown = document.getElementById('loginDropdown');
+  const counters = document.querySelectorAll(".counter");
+  const animatables = document.querySelectorAll(".animatable"); // Select elements to animate
+  const speed = 500; // The lower the number, the faster the count
 
-    // Toggle login submenu
-    loginToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent default anchor behavior
-        loginDropdown.style.display = loginDropdown.style.display === 'block' ? 'none' : 'block';
-    });
+  const startCounting = (counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText;
 
-    // Close menus when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.dropdownmenu')) {
-            loginDropdown.style.display = 'none';
+      // Lower increment to slow and higher to speed
+      const increment = target / speed;
+
+      // Check if target is reached
+      if (count < target) {
+        // Add increment
+        counter.innerText = Math.ceil(count + increment);
+        // Call function every 1 millisecond
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  };
+
+  const observerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.1, // When 10% of the element is visible
+  };
+
+  const handleIntersection = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains("counter")) {
+          startCounting(entry.target);
+        } else if (entry.target.classList.contains("animatable")) {
+          entry.target.classList.add("animated", "fadeInUp");
         }
+        observer.unobserve(entry.target); // Stop observing once started
+      }
     });
+  };
+
+  const observer = new IntersectionObserver(
+    handleIntersection,
+    observerOptions
+  );
+
+  counters.forEach((counter) => {
+    observer.observe(counter);
+  });
+
+  animatables.forEach((animatable) => {
+    observer.observe(animatable);
+  });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  const loginToggle = document.getElementById("loginToggle");
+  const loginDropdown = document.getElementById("loginDropdown");
+
+  // Toggle login submenu
+  loginToggle.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    loginDropdown.style.display =
+      loginDropdown.style.display === "block" ? "none" : "block";
+  });
+
+  // Close menus when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".dropdownmenu")) {
+      loginDropdown.style.display = "none";
+    }
+  });
+});
+document
+  .getElementById("noticeLink")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("notice").scrollIntoView({ behavior: "smooth" });
+  });
