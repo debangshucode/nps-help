@@ -196,7 +196,7 @@ html {
         flex-direction: column;
     }
     .section-image{
-        width: 390px;
+        width:100%;
     }
     .school-sections {
         padding: 20px;
