@@ -35,6 +35,7 @@ header{
     height: auto;
     overflow: visible;
     transition: top ease-in .3s;
+    padding-top: 30px;
 }
 /* aboutus */
 
@@ -298,6 +299,7 @@ header{
 }
 .toptop{
     display: flex;
+    position:absolute;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -307,6 +309,7 @@ header{
     font-size: 17px;
     font-weight: 600;
     padding-top: 5px;
+    z-index: 999;
 }
 .icons{
     display: flex;
