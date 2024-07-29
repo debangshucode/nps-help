@@ -159,7 +159,8 @@ body {
 
 .popup-image {
     width: 100%;
-    height: auto;
+    height: 230px;
+    object-fit: cover;
 }
 
 .popup-text {
